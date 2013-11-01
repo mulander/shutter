@@ -13,8 +13,8 @@ class ShutterJSONRPCTestCase(unittest.TestCase):
     def tearDown(self):
         self.port.stopListening()
     def test_snapshots_empty(self):
-    	def _result(value):
-    		self.assertTrue(value['error'] is None)
-    		self.assertFalse(value['result'] is None)
-    		self.assertEqual(value['result'], [])
+        def _result(value):
+            self.assertTrue(value['error'] is None)
+            self.assertFalse(value['result'] is None)
+            self.assertEqual(value['result'], [])
         return self.client.callRemote("snapshots", "http://programistamag.pl").addCallback(_result)
