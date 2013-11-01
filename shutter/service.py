@@ -10,5 +10,5 @@ class Shutter(object):
                               AND u.id = s.url_id
                          ORDER BY s.created_at DESC
             """, [url])
-            return txn.fetchall()
+            return [column[0] for column in txn.fetchall()]
         return self.__dbpool.runInteraction(_get_snapshot_urls, url)
