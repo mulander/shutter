@@ -8,6 +8,8 @@ from shutter.service import Shutter
 class ShutterJSONRPCProtocol(jsonrpc.JSONRPC):
     def __init__(self):
         self.service = Shutter()
+    def jsonrpc_snapshot(self, url):
+        return self.service.snapshot(url)
     def jsonrpc_snapshots(self, url):
         return self.service.snapshots(url)
 
