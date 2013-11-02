@@ -1,0 +1,11 @@
+--- /usr/local/lib/python2.7/dist-packages/trialcoverage-0.3.12-py2.7.egg/trialcoverage/trialcoverage.py	2013-11-01 20:49:46.557388284 +0100
++++ /usr/local/lib/python2.7/dist-packages/trialcoverage/trialcoverage.py	2013-05-24 00:32:59.000000000 +0200
+@@ -136,7 +136,7 @@ class ProgressionReporter(CoverageReport
+         if outfile is None:
+             outfile = SUMMARY_FNAME
+         outfileobj = open(outfile, "w")
+-        self.summary_reporter.report(morfs, omit=omit, outfile=outfileobj, include=include)
++        self.summary_reporter.report(morfs, outfile=outfileobj)
+         outfileobj.close()
+ 
+         self.curunc, self.curpart = parse_out_unc_and_part(fileutil.read_file(SUMMARY_FNAME, mode='rU'))

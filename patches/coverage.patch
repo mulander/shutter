@@ -1,0 +1,49 @@
+diff -rupN /usr/share/pyshared/coverage/report.py coverage/report.py
+--- /usr/share/pyshared/coverage/report.py	2010-09-04 05:17:57.000000000 +0200
++++ /usr/share/pyshared/coverage/report.py	2013-05-24 00:35:47.000000000 +0200
+@@ -35,26 +35,26 @@ class Reporter(object):
+         file_locator = self.coverage.file_locator
+         self.code_units = code_unit_factory(morfs, file_locator)
+ 
+-        if config.include:
+-            patterns = [file_locator.abs_file(p) for p in config.include]
+-            filtered = []
+-            for cu in self.code_units:
+-                for pattern in patterns:
+-                    if fnmatch.fnmatch(cu.filename, pattern):
+-                        filtered.append(cu)
+-                        break
+-            self.code_units = filtered
++        #if config.include:
++        #    patterns = [file_locator.abs_file(p) for p in config.include]
++        #    filtered = []
++        #    for cu in self.code_units:
++        #        for pattern in patterns:
++        #            if fnmatch.fnmatch(cu.filename, pattern):
++        #                filtered.append(cu)
++        #                break
++        #    self.code_units = filtered
+ 
+-        if config.omit:
+-            patterns = [file_locator.abs_file(p) for p in config.omit]
+-            filtered = []
+-            for cu in self.code_units:
+-                for pattern in patterns:
+-                    if fnmatch.fnmatch(cu.filename, pattern):
+-                        break
+-                else:
+-                    filtered.append(cu)
+-            self.code_units = filtered
++        #if config.omit:
++        #    patterns = [file_locator.abs_file(p) for p in config.omit]
++        #    filtered = []
++        #    for cu in self.code_units:
++        #        for pattern in patterns:
++        #            if fnmatch.fnmatch(cu.filename, pattern):
++        #                break
++        #        else:
++        #            filtered.append(cu)
++        #    self.code_units = filtered
+ 
+         self.code_units.sort()
+ 
